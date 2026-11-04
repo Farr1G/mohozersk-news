@@ -4,7 +4,7 @@
         "publicationDate": "2026.04.02",
         "heading": "Начался сезон клещей в Мохозёрске",
         "tags": ["медицина", "объявление"],
-        "coverImage": "data/images/kleschy",
+        "coverImage": "data/images/kleschy.jpg",
         "altImage": "Клещ сидит на травинке",
         "content": "<p>Вакцинируйтесь бесплатно в больнице, чтобы уберечь себя от коварной заразы, поражающий нас каждый год.</p>"
     },
@@ -13,7 +13,7 @@
         "publicationDate": "2026.11.04",
         "heading": "С днём народного единства!",
         "tags": ["праздники"],
-        "coverImage": "data/images/den-narodnogo-edinstva",
+        "coverImage": "data/images/den-narodnogo-edinstva.jpg",
         "altImage": "Концерт 2024 года в честь дня народного единства",
         "content": "<p>Мохозёрцы! В честь дня народного единства на главной площади города проходит концерт.</p>"
     }
