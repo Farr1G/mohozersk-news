@@ -10,10 +10,20 @@ async function get_articles () {
 }
 
 function out_articles(articles) {
+    function create_card(article) {
+        const ArticleCardTemplate = document.getElementById("article-card-template")
+        const Main = document.querySelector("main")
+        const card = ArticleCardTemplate.content.cloneNode(true)
+
+        card.querySelector("h3").textContent = article.heading
+        card.querySelector("date").textContent = article.publicationDate
+
+        Main.append(card)
+    }
+
     for (let id = articles.length - 1; id >= 0; id--) {
         const article = articles[id];
-
-        console.log(article.heading, article.id)
+        create_card(article)
     }
 }
 
