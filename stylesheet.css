@@ -107,7 +107,8 @@ body {
     list-style: none;
 }
 
-.header__a {
+.header__a,
+.footer__a {
     color: var(--text-light);
     text-decoration: none;
 }
@@ -132,4 +133,24 @@ body {
 .search__button {
     border: none;
     background-color: transparent;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: repeat(2);
+    gap: var(--unit-4) var(--unit-6);
+
+    padding: var(--unit-7);
+    
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.footer__ul {
+    list-style: none;
+}
+
+.footer__copyright {
+    color: var(--text-unimportant);
 }
