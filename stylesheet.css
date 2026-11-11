@@ -19,8 +19,117 @@
     --unit-5: 32px;
     --unit-6: 48px;
     --unit-7: 64px;
-    --unit-8: 128px
+    --unit-8: 128px;
 
     --accent-font: "Roboto Serif", serif;
     --main-font: "PermianSansTypeface", sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+.heading {
+    font-family: var(--accent-font);
+    font-size: 32px;
+    line-height: 110%;
+
+    font-weight: 600;
+    font-feature-settings: "wdth" 80;
+}
+
+.subheading {
+    font-family: var(--accent-font);
+    font-size: 20px;
+    line-height: 120%;
+
+    font-weight: 600;
+    font-feature-settings: "wdth" 80;
+}
+
+.title-l {
+    font-family: var(--accent-font);
+    font-size: 40px;
+    line-height: 110%;
+
+    font-weight: 500;
+    font-feature-settings: "wdth" 80;
+}
+
+.title-m {
+    font-family: var(--accent-font);
+    font-size: 24px;
+    line-height: 120%;
+
+    font-weight: 500;
+    font-feature-settings: "wdth" 70;
+}
+
+.body-text {
+    font-family: var(--main-font);
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.caption-text {
+    font-family: var(--main-font);
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.functional-text {
+    font-family: var(--main-font);
+    font-size: 20px;
+    line-height: 120%;
+    font-weight: bold;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: var(--unit-6);
+    align-items: center;
+
+    padding: var(--unit-3) var(--unit-7);
+
+    background-color: var(--bg-brand);
+    color: var(--text-light);
+}
+
+.header__ul {
+    display: flex;
+    gap: var(--unit-3);
+
+    list-style: none;
+}
+
+.header__a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.search {
+    display: flex;
+
+    border-radius: var(--unit-1);
+    background-color: white;
+}
+
+.search__input {
+    flex-grow: 1;
+    
+    padding: var(--unit-1) var(--unit-2);
+    border: none;
+
+    background-color: transparent;
+    color: var(--text-unimportant);
+}
+
+.search__button {
+    border: none;
+    background-color: transparent;
 }
