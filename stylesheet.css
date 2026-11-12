@@ -199,11 +199,16 @@ body {
     flex-direction: row-reverse;
 }
 
-main {
+.main {
     padding: var(--unit-7);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--unit-6);
 }
 
 .card_l {
+    grid-column-start: span 3;
     padding: var(--unit-4);
 
     display: flex;
