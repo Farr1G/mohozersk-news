@@ -35,7 +35,9 @@ function out_articles(articles) {
 
         switch(cardType) {
             case CardTypes.M:
-                card.querySelector("img").setAttribute("alt", article.altImage)
+                card.querySelector("img").setAttribute("src", article.coverImage)
+                card.querySelector("img").setAttribute("src", "/data/images/card-cover-placeholder.png")
+                card.querySelector("img").setAttribute("alt", article.altText)
                 break
         }
 
