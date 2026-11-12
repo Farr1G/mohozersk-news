@@ -160,6 +160,9 @@ body {
     border: none;
 
     background-color: transparent;
+}
+
+.search__input::placeholder {
     color: var(--text-unimportant);
 }
 
@@ -181,9 +184,17 @@ body {
 }
 
 .footer__ul {
+    display: flex;
+    gap: var(--unit-3);
     list-style: none;
 }
 
 .footer__copyright {
     color: var(--text-unimportant);
+}
+
+.socials {
+    display: flex;
+    gap: var(--unit-2);
+    flex-direction: row-reverse;
 }
