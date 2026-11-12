@@ -10,7 +10,7 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="stylesheet.css">
     </head>
     <body class="body-text">
@@ -29,10 +29,23 @@
             </search>
         </header>
         <main>
-            <template id="article-card-template">
-                <div>
-                    <h3></h3>
-                    <date></date>
+            <template id="article-card-s-template">
+                <div class="card card_s">
+                    <h3 class="card__title title-m"></h3>
+                    <time datetime="" class="card__date caption"></time>
+                </div>
+            </template>
+            <template id="article-card-m-template">
+                <div class="card card_m">
+                    <img src="" alt="" class="card__image" loading="lazy">
+                    <h3 class="card__title title-m"></h3>
+                    <time datetime="" class="card__date caption"></time>
+                </div>
+            </template>
+            <template id="article-card-l-template">
+                <div class="card card_l">
+                    <h3 class="card__title title-l"></h3>
+                    <time datetime="" class="card__date caption"></time>
                 </div>
             </template>
         </main>
