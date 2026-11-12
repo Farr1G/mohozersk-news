@@ -213,7 +213,7 @@ main {
 
 .card_l,
 .card__image {
-    width: 40%; /* Сменить на 100% потом*/
+    width: 100%;
     aspect-ratio: 4 / 3;
     border-radius: var(--unit-2);
 }
