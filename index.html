@@ -29,30 +29,34 @@
             </search>
         </header>
 
-        <main class="main">
-            <template id="article-card-m-template">
-                <div class="card card_m">
-                    <img src="" alt="" class="card__image" loading="lazy">
-                    <h3 class="card__title title-m"></h3>
-                    <time datetime="" class="card__date caption"></time>
-                </div>
-            </template>
-            <template id="article-card-l-template">
-                <div class="card card_l">
-                    <h3 class="card__title title-l"></h3>
-                    <time datetime="" class="card__date caption"></time>
-                </div>
-            </template>
-        </main>
+        <div class="news-feed">
+            <main class="main">
+                <template id="article-card-m-template">
+                    <div class="card card_m">
+                        <img src="" alt="" class="card__image" loading="lazy">
+                        <h3 class="card__title title-m"></h3>
+                        <time datetime="" class="card__date caption"></time>
+                    </div>
+                </template>
+                <template id="article-card-l-template">
+                    <div class="card card_l">
+                        <h3 class="card__title title-l"></h3>
+                        <time datetime="" class="card__date caption"></time>
+                    </div>
+                </template>
+            </main>
 
-        <aside>
-            <template id="article-card-s-template">
-                <div class="card card_s">
-                    <h3 class="card__title title-m"></h3>
-                    <time datetime="" class="card__date caption"></time>
-                </div>
-            </template>
-        </aside>
+            <aside class="aside">
+                <template id="article-card-s-template">
+                    <div class="card card_s">
+                        <h3 class="card__title title-m"></h3>
+                        <time datetime="" class="card__date caption"></time>
+                    </div>
+                </template>
+
+                <h2 class="aside__h2 heading">Свежие новости</h2>
+            </aside>
+        </div>
 
         <footer class="footer">
             <nav class="footer__nav">
