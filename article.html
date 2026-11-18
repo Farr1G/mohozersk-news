@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Мохозёрск, события, новости, INSERT_NAME">
+        <meta name="description" content="Актуальная информация о происходящем в Мохозёрске">
+        <meta name="author" content="INSERT_NAME">
+
+        <title>INSERT_NAME | Лента новостей Мохозёрска</title>
+
+        <link rel="preconnect" href="https://fonts  .googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/css/global.css">
+        <link rel="stylesheet" href="/css/layout.css">
+        <link rel="stylesheet" href="/css/cards.css">
+        <link rel="stylesheet" href="/css/pages/article.css">
+    </head>
+    <body class="body-text">
+        <header class="header"></header>
+
+        <div class="container">
+            <main class="main article">
+                <hgroup class="article__description">
+                    <time datetime="" class="article__date caption-text">13 ноября, 11:47</time>
+                    <h1 class="article__h1 heading">
+                        Соединительный переулок, Продольный переулок или переулок Заборов? Рассказываем, почему у этого переулка так много названий и какое из них правильное.
+                    </h1>
+                    <div class="article__tags">
+                        <template id="article-tag-template">
+                            <a href="" class="article__tag caption-text"></a>
+                        </template>
+
+                        <a href="" class="article__tag caption-text">Город</a>
+                        <a href="" class="article__tag caption-text">Спокойные новости</a>
+                    </div>
+                </hgroup>
+                <div class="article__image article__image_cover">
+                    <img src="/data/images/card-cover-placeholder.png" alt="" loading="eager">
+                    <p class="article__image-caption article__image-caption_cover caption-text">Фотография Соединительного переулка. Автор: Ефрения Семафорская.</p>
+                </div>
+            </main>
+
+            <aside class="aside">
+                <template id="article-card-s-template">
+                    <div class="card card_s">
+                        <h3 class="card__title title-m"></h3>
+                        <time datetime="" class="card__date caption"></time>
+                    </div>
+                </template>
+
+                <h2 class="aside__h2 heading">Свежие новости</h2>
+            </aside>
+        </div>
+
+        <footer class="footer"></footer>
+        <script src="js/news-feed-generation.js"></script>
+    </body>
+</html>
