@@ -114,6 +114,8 @@ a {
     font-family: var(--main-font);
     font-size: 16px;
     line-height: 140%;
+
+    color: var(--text-unimportant);
 }
 
 .functional-text {

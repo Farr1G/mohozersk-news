@@ -75,10 +75,6 @@
     list-style: none;
 }
 
-.footer__copyright {
-    color: var(--text-unimportant);
-}
-
 .socials {
     display: flex;
     gap: var(--unit-2);
