@@ -227,6 +227,16 @@ a {
     margin-bottom: var(--unit-2);
 }
 
+.card_s {
+    padding-bottom: var(--unit-3);
+    border-bottom: 1px solid var(--text-unimportant);
+}
+
+.card_s:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
 .card_l {
     order: -1;
 
