@@ -1,0 +1,41 @@
+.card_s {
+    padding-bottom: var(--unit-3);
+    border-bottom: 1px solid var(--text-unimportant);
+}
+
+.card_s:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.card_l {
+    order: -1;
+
+    grid-column-start: span 3;
+    padding: var(--unit-4);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.card_l,
+.card__image {
+    width: 100%;
+    aspect-ratio: 1 / 0.6;
+    border-radius: var(--unit-2);
+}
+
+.card__title {
+    margin-bottom: var(--unit-1);
+}
+
+.card__title,
+.card__date {
+    color: var(--text-dark);
+}
+
+.card__image {
+    margin-bottom: var(--unit-3);
+    object-fit: cover;
+}
