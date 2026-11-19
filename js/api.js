@@ -8,3 +8,15 @@ async function get_articles () {
         console.error(error.message);
     }
 }
+
+async function get_article (index) {
+    try {
+        const Response = await fetch("/data/articles.json");
+        const Articles = await Response.json();
+        const Article = Articles[index]
+        
+        return Article;
+    } catch (error) {
+        console.error(error.message);
+    }
+}
