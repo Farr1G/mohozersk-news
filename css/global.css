@@ -69,6 +69,11 @@ a {
     text-decoration: none;
 }
 
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
 .heading {
     font-family: var(--accent-font);
     font-size: 32px;
