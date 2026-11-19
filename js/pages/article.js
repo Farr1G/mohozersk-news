@@ -62,4 +62,15 @@
                     break;
             }
         })
+
+        render_linked_articles(Article.linkedArticles);
     })
+
+async function render_linked_articles (linkedArticles) {
+    const LinkedArticlesContainer = document.querySelector(".linked-articles");
+
+    for (let index = 0; index < linkedArticles.length; index++) {
+        const linkedArticle = await get_article(linkedArticles[index]);
+        render_card(linkedArticle, CARD_TYPES.S, LinkedArticlesContainer);
+    }
+}

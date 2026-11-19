@@ -4,12 +4,14 @@ const CARD_TYPES = {
 
 function render_columns (Columns, hasMainColumn) {
     Columns.AsideColumn.forEach((Article) => {
-        render_card(Article, CARD_TYPES.S);
+        const Aside = document.querySelector("aside");
+        render_card(Article, CARD_TYPES.S, Aside);
     })
 
     if (hasMainColumn) {
         Columns.MainColumn.forEach((Article) => {
-            render_card(Article, CARD_TYPES.M);
+        const Main = document.querySelector("main")
+            render_card(Article, CARD_TYPES.M, Main);
         })
     }
 }
@@ -60,7 +62,7 @@ function get_card_template (cardType) {
     }
 }
 
-function render_card(Article, cardType) {
+function render_card(Article, cardType, destination) {
     const ArticleCardTemplate = get_card_template(cardType);
     const Card = ArticleCardTemplate.content.cloneNode(true);
 
@@ -73,11 +75,5 @@ function render_card(Article, cardType) {
     Card.querySelector("time").setAttribute("datetime", Article.publicationDate);
     Card.querySelector("time").textContent = Article.publicationDate;
 
-    if (cardType === CARD_TYPES.S) {
-        const Aside = document.querySelector("aside");
-        Aside.append(Card);
-    } else {
-        const Main = document.querySelector("main");
-        Main.append(Card);
-    }
+    destination.append(Card);
 }

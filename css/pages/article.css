@@ -1,9 +1,15 @@
-.article {
+.aside {
+    grid-row: span 2;
+}
+
+.article,
+.linked-articles {
     grid-column: span 2;
 }
 
-@media (max-width: 1200px) {
-    .article {
+@media (max-width: 1300px) {
+    .article,
+    .linked-articles {
         grid-column: span 3;
     }
 }
@@ -55,8 +61,6 @@
 /* RECOMENDATIONS */
 
 .linked-articles {
-    margin-top: var(--unit-7);
-
     display: flex;
     flex-direction: column;
     gap: var(--unit-3);
