@@ -75,6 +75,28 @@ img {
     object-fit: cover;
 }
 
+button {
+    padding: var(--unit-2) var(--unit-3);
+
+    border: none;
+    border-radius: var(--unit-2);
+
+    background-color: var(--bg-brand);
+    color: var(--text-light);
+
+    transition: all ease-in-out 200ms;
+}
+
+button:hover {
+    background-color: color-mix(in lab, var(--bg-brand) 80%, white);
+}
+
+/* Отключено из-за непоняток с тем, как отделить кнопку от фона */
+/* button:disabled {
+    background-color: var(--bg-light);
+    color: var(--text-unimportant);
+} */
+
 .heading {
     font-family: var(--accent-font);
     font-size: 32px;
