@@ -67,8 +67,8 @@ function render_card(Article, cardType, destination) {
     const Card = ArticleCardTemplate.content.cloneNode(true);
 
     if (cardType === CARD_TYPES.M) {
-        Card.querySelector("img").setAttribute("src", Article.coverImage);
-        Card.querySelector("img").setAttribute("alt", Article.altText);
+        Card.querySelector("img").setAttribute("src", Article.coverImage.imagePath);
+        Card.querySelector("img").setAttribute("alt", Article.coverImage.altText);
     }
 
     Card.querySelector("h3").textContent = Article.heading;

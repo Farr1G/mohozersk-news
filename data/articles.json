@@ -7,8 +7,10 @@
         "heading": "Соединительный переулок, Продольный переулок или переулок Заборов? Рассказываем, почему у этого переулка так много названий и какое из них правильное.",
         "publicationDate": "2026-11-13 11:47",
 
-        "coverImage": "/data/images/card-cover-placeholder.png",
-        "altText": "Фотография Соединительного переулка. Автор: Ефрения Семафорская.",
+        "coverImage": {
+            "imagePath": "/data/images/card-cover-placeholder.png",
+            "altText": "Фотография Соединительного переулка. Автор: Ефрения Семафорская."
+        },
         
         "content": [
             "Переулок, названия которого вынесены в заголовок, расположен в северной части города и соединяет два склада, изначально стоявших на отшибе города. Они предназначались для хранения древесных стволов и оборудования лесозаготовительного предприятия, вокруг которого и образовался Мохозёрск. После закрытия Мохозёрского Лесозаготовительного Предприятия здания долгое время пустовали, пока после развала СССР не начали сдаваться производителям мебели и ретейлерам.",
@@ -31,8 +33,10 @@
         "heading": "Одного из вандалов, действовавших 4 ноября, поместили в СИЗО.",
         "publicationDate": "2026-11-12 21:20",
 
-        "coverImage": "/data/images/card-cover-placeholder.png",
-        "altText": "Заглушка",
+        "coverImage": {
+            "imagePath": "/data/images/card-cover-placeholder.png",
+            "altText": "Заглушка."
+        },
         
         "content": [
             "Ошибка: эта статья ещё не написана"
@@ -47,8 +51,10 @@
         "heading": "Главное со встречи предпринимателей Вологодской области.",
         "publicationDate": "2026-11-12 13:00",
 
-        "coverImage": "/data/images/card-cover-placeholder.png",
-        "altText": "Заглушка",
+        "coverImage": {
+            "imagePath": "/data/images/card-cover-placeholder.png",
+            "altText": "Заглушка."
+        },
         
         "content": [
             "Ошибка: эта статья ещё не написана",
@@ -64,8 +70,10 @@
         "heading": "Геннадий Перцов, глава администрации Мохозёрска, провёл встречу с учителями школы №2.",
         "publicationDate": "2026-11-12 9:00",
 
-        "coverImage": "/data/images/card-cover-placeholder.png",
-        "altText": "Заглушка",
+        "coverImage": {
+            "imagePath": "/data/images/card-cover-placeholder.png",
+            "altText": "Заглушка."
+        },
         
         "content": [
             "Ошибка: эта статья ещё не написана",
@@ -81,8 +89,10 @@
         "heading": "Неизвестные разбили витрину, разворошили урны и повредили скамейки.",
         "publicationDate": "2026-11-11 23:46",
 
-        "coverImage": "/data/images/card-cover-placeholder.png",
-        "altText": "Заглушка",
+        "coverImage": {
+            "imagePath": "/data/images/card-cover-placeholder.png",
+            "altText": "Заглушка."
+        },
         
         "content": [
             "Ошибка: эта статья ещё не написана",
@@ -98,8 +108,10 @@
         "heading": "МУДН сообщил об открытии 7 мест для поступления.",
         "publicationDate": "2026-11-11 16:02",
 
-        "coverImage": "/data/images/card-cover-placeholder.png",
-        "altText": "Заглушка",
+        "coverImage": {
+            "imagePath": "/data/images/card-cover-placeholder.png",
+            "altText": "Заглушка."
+        },
         
         "content": [
             "Ошибка: эта статья ещё не написана",
@@ -115,8 +127,10 @@
         "heading": "Когда пора менять шины на зимние? Разбираемся с Александром, владельцем автосалона «Герменевтика».",
         "publicationDate": "2026-11-10 15:00",
 
-        "coverImage": "/data/images/card-cover-placeholder.png",
-        "altText": "Заглушка",
+        "coverImage": {
+            "imagePath": "/data/images/card-cover-placeholder.png",
+            "altText": "Заглушка."
+        },
         
         "content": [
             "Ошибка: эта статья ещё не написана",
@@ -132,8 +146,10 @@
         "heading": "Власти про последствия пожара этого лета: «Это неприоритетная задача». Фоторепортаж.",
         "publicationDate": "2026-11-10 10:00",
 
-        "coverImage": "/data/images/card-cover-placeholder.png",
-        "altText": "Заглушка",
+        "coverImage": {
+            "imagePath": "/data/images/card-cover-placeholder.png",
+            "altText": "Заглушка."
+        },
         
         "content": [
             "Ошибка: эта статья ещё не написана",
@@ -149,8 +165,10 @@
         "heading": "Опубликован предварительный список зданий для капитального ремонта к 2030 году.",
         "publicationDate": "2026-11-09 16:00",
 
-        "coverImage": "/data/images/card-cover-placeholder.png",
-        "altText": "Заглушка",
+        "coverImage": {
+            "imagePath": "/data/images/card-cover-placeholder.png",
+            "altText": "Заглушка."
+        },
         
         "content": [
             "Ошибка: эта статья ещё не написана",
@@ -166,8 +184,10 @@
         "heading": "Автобусы №1 и №3 будут ходить реже из-за нехватки водителей. Перевозчик продолжает их набор.",
         "publicationDate": "2026-11-09 10:01",
 
-        "coverImage": "/data/images/card-cover-placeholder.png",
-        "altText": "Заглушка",
+        "coverImage": {
+            "imagePath": "/data/images/card-cover-placeholder.png",
+            "altText": "Заглушка."
+        },
         
         "content": [
             "Ошибка: эта статья ещё не написана",
@@ -183,8 +203,10 @@
         "heading": "Эксклюзивный отрывок из новой книги об истории Мохозёрска",
         "publicationDate": "2026-11-08 10:00",
 
-        "coverImage": "/data/images/card-cover-placeholder.png",
-        "altText": "Заглушка",
+        "coverImage": {
+            "imagePath": "/data/images/card-cover-placeholder.png",
+            "altText": "Заглушка."
+        },
         
         "content": [
             "Ошибка: эта статья ещё не написана",

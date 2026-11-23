@@ -28,43 +28,44 @@
 
         // Обложка
 
-        const ImageTemplate = document.getElementById("article-image-template");
-
-        const CoverImage = ImageTemplate.content.cloneNode(true);
-        CoverImage.querySelector("img").setAttribute("src", Article.coverImage);
-        CoverImage.querySelector("img").setAttribute("alt", Article.altText);
-        CoverImage.querySelector("p").textContent = Article.altText;
-
-        Main.append(CoverImage);
+        render_element(Article.coverImage, Main)
 
         // Содержание статьи
 
-        const ParagraphTemplate = document.getElementById("article-paragraph-template");
-
-        Article.content.forEach((contentElement) => {
-            switch (typeof(contentElement)) {
-                case "string":
-                    const ParagraphInstance = ParagraphTemplate.content.cloneNode(true);
-                    ParagraphInstance.querySelector("p").textContent = contentElement;
-                    Main.append(ParagraphInstance);
-                    break;
-
-                case "object":
-                    const ImageInstance = ImageTemplate.content.cloneNode(true);
-                    ImageInstance.querySelector("img").setAttribute("src", contentElement.imagePath);
-                    ImageInstance.querySelector("img").setAttribute("alt", contentElement.altText);
-                    ImageInstance.querySelector("p").textContent = contentElement.altText;
-                    Main.append(ImageInstance);
-                    break;
-            
-                default:
-                    console.error(`Было получено неизвестное содержимое статьи: тип "${typeof(contentElement)}"`, contentElement);
-                    break;
-            }
+        Article.content.forEach((element) => {
+            render_element(element, Main);
         })
 
         render_linked_articles(Article.linkedArticles);
     })
+
+function render_element(element, container) {
+    switch (typeof(element)) {
+        case "string":
+            const ParagraphTemplate = document.getElementById("article-paragraph-template");
+            const ParagraphInstance = ParagraphTemplate.content.cloneNode(true);
+
+            ParagraphInstance.querySelector("p").textContent = element;
+
+            container.append(ParagraphInstance);
+            break;
+
+        case "object":
+            const ImageTemplate = document.getElementById("article-image-template");
+            const ImageInstance = ImageTemplate.content.cloneNode(true);
+
+            ImageInstance.querySelector("img").setAttribute("src", element.imagePath);
+            ImageInstance.querySelector("img").setAttribute("alt", element.altText);
+            ImageInstance.querySelector("p").textContent = element.altText;
+
+            container.append(ImageInstance);
+            break;
+    
+        default:
+            console.error(`Было получено неизвестное содержимое статьи: тип "${typeof(element)}"`, element);
+            break;
+    }
+}
 
 async function render_linked_articles (linkedArticles) {
     const LinkedArticlesContainer = document.querySelector(".linked-articles");
