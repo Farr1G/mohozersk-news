@@ -11,8 +11,7 @@ async function get_articles () {
 
 async function get_article (index) {
     try {
-        const Response = await fetch("/data/articles.json");
-        const Articles = await Response.json();
+        const Articles = await get_articles()
         const Article = Articles[index]
         
         return Article;
