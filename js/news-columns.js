@@ -36,9 +36,9 @@ function prepare_columns (Articles, hasMainColumn) {
     ) {
         const Article = Articles[index];
 
-        if (Article.importance === CARD_TYPES.S) {
+        if (Article.importance === CARD_TYPES.S && AsideColumn.length < FILLING_REQUIREMENTS.ASIDE_COLUMN) {
             AsideColumn.push(Article);
-        } else if (hasMainColumn) {
+        } else if (hasMainColumn && MainColumn.length < FILLING_REQUIREMENTS.MAIN_COLUMN) {
             MainColumn.push(Article);
         }
     }
@@ -74,6 +74,7 @@ function render_card(Article, cardType, destination) {
     Card.querySelector("h3").textContent = Article.heading;
     Card.querySelector("time").setAttribute("datetime", Article.publicationDate);
     Card.querySelector("time").textContent = Article.publicationDate;
+    Card.querySelector("a").setAttribute("href", `/article.html?id=${Article.id}`);
 
     destination.append(Card);
 }

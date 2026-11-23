@@ -7,7 +7,8 @@
 // Получить связанные статьи
 // Создать их карточки в конце страницы
 // Удалить статью из боковой колонки, если она там есть
-(get_article(0))
+(get_id_from_url())
+    .then((id) => get_article(id))
     .then((Article) => {
         const Main = document.querySelector("main");
 
@@ -38,6 +39,13 @@
 
         render_linked_articles(Article.linkedArticles);
     })
+
+// Функция асинхронная, потому что это исправило её незапуск
+// Нужно разобраться почему так происходит
+async function get_id_from_url() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("id");
+}
 
 function render_element(element, container) {
     switch (typeof(element)) {
