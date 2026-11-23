@@ -26,14 +26,14 @@
     color: var(--text-light);
 }
 
-.search {
+.searchbar {
     display: flex;
 
     border-radius: var(--unit-1);
     background-color: white;
 }
 
-.search__input {
+.searchbar__input {
     flex-grow: 1;
     
     padding: var(--unit-1) var(--unit-2);
@@ -42,11 +42,11 @@
     background-color: transparent;
 }
 
-.search__input::placeholder {
+.searchbar__input::placeholder {
     color: var(--text-unimportant);
 }
 
-.search__button {
+.searchbar__button {
     border: none;
     background-color: transparent;
 }
