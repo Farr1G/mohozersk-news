@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Мохозёрск, события, новости, INSERT_NAME">
+        <meta name="description" content="Актуальная информация о происходящем в Мохозёрске">
+        <meta name="author" content="INSERT_NAME">
+
+        <title>INSERT_NAME | Лента новостей Мохозёрска</title>
+
+        <link rel="preconnect" href="https://fonts  .googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/css/global.css">
+        <link rel="stylesheet" href="/css/layout.css">
+        <link rel="stylesheet" href="/css/cards.css">
+        <link rel="stylesheet" href="/css/pages/search.css">
+    </head>
+    <body class="body-text">
+        <header class="header">
+            <div class="logo subheading"><a href="/index.html"><img src="" alt="INSERT_NAME" class="logo__img"></a></div>
+            <nav class="header__nav">
+                <ul class="header__ul functional-text">
+                    <li><a href="#" class="header__a">Власть</a></li>
+                    <li><a href="#" class="header__a">Потом добавить сюда темы</a></li>
+                    <li><a href="#" class="header__a">По тегам</a></li>
+                </ul>
+            </nav>
+            <search class="searchbar">
+                <input type="search" placeholder="Найти статью..." class="searchbar__input body-text">
+                <button type="submit" class="searchbar__button body-text"><img src="" alt="Лупа"></button>
+            </search>
+        </header>
+
+        <div class="container">
+            <main class="main">
+                <section class="search">
+                    <h1 class="heading">Поиск по сайту</h1>
+
+                    <form>
+                        <search class="searchbar">
+                            <input type="search" placeholder="Найти статью..." class="searchbar__input body-text">
+                            <button type="submit" class="searchbar__button body-text"><img src="" alt="Лупа"></button>
+                        </search>
+
+                        <fieldset>
+                            <h2 class="subheading">Фильтры</h2>
+
+                            <input type="date" id="from-date-input">
+                            <input type="date" id="until-date-input">
+
+                            <select id="theme-input">
+                                <option value="none">По всем темам</option>
+                                <option value="none">Власть</option>
+                                <option value="none">Потом добавить сюда темы</option>
+                                <option value="none">По тегам</option>
+                            </select>
+                        </fieldset>
+
+                        <fieldset>
+                            <h2 class="subheading">Теги</h2>
+                        </fieldset>
+                    </form>
+                </section>
+            </main>
+
+            <aside class="aside">
+                <template id="article-card-s-template">
+                    <a href="#" class="card card_s">
+                        <h3 class="card__title title-m"></h3>
+                        <time datetime="" class="card__date caption"></time>
+                    </a>
+                </template>
+
+                <h2 class="aside__h2 heading">Свежие новости</h2>
+            </aside>
+        </div>
+
+        <footer class="footer"></footer>
+        
+        <script src="/js/api.js"></script>
+        <script src="/js/news-columns.js"></script>
+        <script src="/js/aside-feed-only.js"></script>
+        <script src="/js/pages/search.js"></script>
+    </body>
+</html>
