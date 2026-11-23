@@ -19,7 +19,7 @@ function render_columns (Columns, hasMainColumn) {
 function prepare_columns (Articles, hasMainColumn) {
     const FILLING_REQUIREMENTS = {
         "ASIDE_COLUMN": 3,
-        "MAIN_COLUMN": hasMainColumn ? 4 : 0
+        "MAIN_COLUMN": hasMainColumn ? 9 : 0
     };
     const AsideColumn = [];
     const MainColumn = [];
