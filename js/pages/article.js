@@ -15,7 +15,7 @@
         // Заголовок и сведения о статье
 
         Main.querySelector("time").setAttribute("datetime", Article.publicationDate);
-        Main.querySelector("time").textContent = Article.publicationDate;
+        Main.querySelector("time").textContent = render_date(Article.publicationDate);
         Main.querySelector("h1").textContent = Article.heading;
 
         const TagContainer = Main.querySelector(".article__tags");

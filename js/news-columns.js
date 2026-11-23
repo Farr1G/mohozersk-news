@@ -73,8 +73,37 @@ function render_card(Article, cardType, destination) {
 
     Card.querySelector("h3").textContent = Article.heading;
     Card.querySelector("time").setAttribute("datetime", Article.publicationDate);
-    Card.querySelector("time").textContent = Article.publicationDate;
+    Card.querySelector("time").textContent = render_age(Article.publicationDate);
     Card.querySelector("a").setAttribute("href", `/article.html?id=${Article.id}`);
 
     destination.append(Card);
+}
+
+function render_age(publicationDate) {
+    const temporalDate = Temporal.ZonedDateTime.from(`${publicationDate}+03:00[Europe/Moscow]`);
+    const age = temporalDate.since(Temporal.Now.zonedDateTimeISO(), {largestUnit: "years", smallestUnits: "minutes"});
+    
+    if (Temporal.Duration.compare(Temporal.Duration.from({minutes: 5}), age) === -1) {
+        return "только что";
+    }
+ 
+    // Relative Time Formatter
+    const RTF = new Intl.RelativeTimeFormat("ru", {numeric: "auto"});
+    const UNITS = ["years", "months", "days", "hours", "minutes"];
+
+    for (const unit of UNITS) {
+        if (age[unit] !== 0) {
+            const roundedAge = age.round({largestUnit: unit, smallestUnit: unit});
+
+            return RTF.format(roundedAge[unit], unit);
+        }
+    }
+}
+
+function render_date(publicationDate) {
+    const temporalDate = Temporal.ZonedDateTime.from(`${publicationDate}+03:00[Europe/Moscow]`);
+    return temporalDate.toLocaleString("ru", {
+        dateStyle: "long",
+        timeStyle: "short"
+    });
 }
