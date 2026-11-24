@@ -131,3 +131,18 @@ img {
     line-height: 120%;
     font-weight: bold;
 }
+
+.article__tags {
+    display: flex;
+    gap: var(--unit-2);
+    flex-wrap: wrap;
+}
+
+.article__tag {
+    padding: var(--unit-1) var(--unit-2);
+    border: none;
+    border-radius: var(--unit-1);
+
+    background-color: var(--bg-brand-light);
+    color: var(--text-dark);
+}

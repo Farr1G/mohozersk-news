@@ -25,20 +25,6 @@
     margin-top: var(--unit-2);
 }
 
-.article__tags {
-    display: flex;
-    gap: var(--unit-2);
-    flex-wrap: wrap;
-}
-
-.article__tag {
-    padding: var(--unit-1) var(--unit-2);
-    border-radius: var(--unit-1);
-
-    background-color: var(--bg-brand-light);
-    color: var(--text-dark);
-}
-
 /* CONTENT */
 
 .article__image-container {
