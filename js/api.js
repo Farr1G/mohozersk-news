@@ -19,3 +19,15 @@ async function get_article (index) {
         console.error(error.message);
     }
 }
+
+async function get_article_of_the_day() {
+    try {
+        const Response = await fetch("/data/article-of-the-day.json");
+        const ParsedJSON = await Response.json();
+        const ArticleOfTheDay = await get_article(ParsedJSON.id);
+
+        return ArticleOfTheDay;
+    } catch (error) {
+        console.error(error.message);
+    }
+}
