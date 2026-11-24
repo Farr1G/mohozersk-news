@@ -18,36 +18,20 @@
         <link rel="stylesheet" href="/css/pages/search.css">
     </head>
     <body class="body-text">
-        <header class="header">
-            <div class="logo subheading"><a href="/index.html"><img src="" alt="INSERT_NAME" class="logo__img"></a></div>
-            <nav class="header__nav">
-                <ul class="header__ul functional-text">
-                    <li><a href="#" class="header__a">Власть</a></li>
-                    <li><a href="#" class="header__a">Потом добавить сюда темы</a></li>
-                    <li><a href="#" class="header__a">По тегам</a></li>
-                </ul>
-            </nav>
-            <search class="searchbar">
-                <input type="search" placeholder="Найти статью..." class="searchbar__input body-text">
-                <button type="submit" class="searchbar__button body-text"><img src="" alt="Лупа"></button>
-            </search>
-        </header>
-
         <div class="container">
             <main class="main">
+                <h1 class="heading">Поиск по сайту</h1>
+                
                 <section class="search">
-                    <h1 class="heading">Поиск по сайту</h1>
-
                     <form>
                         <search class="searchbar">
-                            <input type="search" placeholder="Найти статью..." class="searchbar__input body-text">
-                            <button type="submit" class="searchbar__button body-text"><img src="" alt="Лупа"></button>
+                            <input type="search" placeholder="Найти статью..." class="searchbar__input searchbar__input_large body-text">
+                            <button type="submit" class="searchbar__button body-text"><img src="/data/images/icons/search.svg" alt="Лупа"></button>
                         </search>
 
-                        <fieldset>
-                            <h2 class="subheading">Фильтры</h2>
-
-                            <input type="date" id="from-date-input">
+                        <h2 class="subheading">Фильтры</h2>
+                        <fieldset class="search__fieldset">
+                            <input type="date" id="from-date-input" class="searchbar__input body-text">
                             <input type="date" id="until-date-input">
 
                             <select id="theme-input">
@@ -58,10 +42,28 @@
                             </select>
                         </fieldset>
 
-                        <fieldset>
-                            <h2 class="subheading">Теги</h2>
+                        <h2 class="subheading">Теги</h2>
+                        <fieldset class="search__fieldset">
+                            <div class="article__tags">
+                                <template id="article-tag-template">
+                                    <button class="article__tag caption-text"></button>
+                                </template>
+                                <button href="#" class="article__tag caption-text">Власть</button>
+                                <button href="#" id="add-tags-button" class="article__tag caption-text">Добавить тег</button>
+                            </div>
                         </fieldset>
                     </form>
+                </section>
+                <section>
+                    <a href="#" class="card card_s">
+                        <h3 class="card__title title-m">Новость</h3>
+                        <time datetime="" class="card__date caption">14 ноября</time>
+                        <div class="article__tags">
+                            <template id="article-tag-template">
+                                <span class="article__tag caption-text"></span>
+                            </template>
+                        </div>
+                    </a>
                 </section>
             </main>
 
@@ -76,8 +78,6 @@
                 <h2 class="aside__h2 heading">Свежие новости</h2>
             </aside>
         </div>
-
-        <footer class="footer"></footer>
         
         <script src="/js/api.js"></script>
         <script src="/js/news-columns.js"></script>
