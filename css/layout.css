@@ -52,6 +52,12 @@
     background-color: transparent;
 }
 
+.logo__img {
+    height: var(--unit-5);
+    width: auto;
+    object-fit: contain;
+}
+
 /* FOOTER */
 
 .footer {
