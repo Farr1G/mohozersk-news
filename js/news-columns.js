@@ -77,6 +77,10 @@ function render_card(Article, cardType, destination) {
     Card.querySelector("a").setAttribute("href", `/article.html?id=${Article.id}`);
 
     destination.append(Card);
+
+    if (cardType === CARD_TYPES.L) {
+        destination.querySelector(".card_l").style.backgroundImage = `url('${Article.coverImage.imagePath}')`;
+    }
 }
 
 function render_age(publicationDate) {
