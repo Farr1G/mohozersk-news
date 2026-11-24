@@ -1,0 +1,23 @@
+.main {
+    display: block;
+    padding: var(--unit-8);
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.main__h1 {
+    margin-bottom: var(--unit-2);
+}
+
+.main__p {
+    margin-bottom: var(--unit-4);
+}
+
+.bgroup {
+    display: flex;
+    gap: var(--unit-2);
+    flex-wrap: wrap;
+}

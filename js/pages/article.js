@@ -7,9 +7,13 @@
 // Получить связанные статьи
 // Создать их карточки в конце страницы
 // Удалить статью из боковой колонки, если она там есть
-(get_id_from_url())
-    .then((id) => get_article(id))
+(get_article(get_id_from_url()))
     .then((Article) => {
+        if (Article === undefined) {
+            window.location.replace(`non-existing-page.html`);
+            return;
+        }
+
         const Main = document.querySelector("main");
 
         // Заголовок и сведения о статье
@@ -40,9 +44,7 @@
         render_linked_articles(Article.linkedArticles);
     })
 
-// Функция асинхронная, потому что это исправило её незапуск
-// Нужно разобраться почему так происходит
-async function get_id_from_url() {
+function get_id_from_url() {
     const params = new URLSearchParams(window.location.search);
     return params.get("id");
 }
@@ -78,8 +80,17 @@ function render_element(element, container) {
 async function render_linked_articles (linkedArticles) {
     const LinkedArticlesContainer = document.querySelector(".linked-articles");
 
+    if (linkedArticles === null) {
+        LinkedArticlesContainer.remove();
+        return;
+    }
+
     for (let index = 0; index < linkedArticles.length; index++) {
         const linkedArticle = await get_article(linkedArticles[index]);
         render_card(linkedArticle, CARD_TYPES.S, LinkedArticlesContainer);
+    }
+
+    if (!linkedArticles.hasChildNodes()) {
+        LinkedArticlesContainer.remove();
     }
 }

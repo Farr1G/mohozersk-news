@@ -3,6 +3,7 @@
 .header {
     position: sticky;
     top: 0;
+    width: 100%;
 
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -54,6 +55,8 @@
 /* FOOTER */
 
 .footer {
+    width: 100%;
+
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: repeat(2);
