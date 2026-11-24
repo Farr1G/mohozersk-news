@@ -38,14 +38,17 @@
 }
 
 :root {
+    --border-modifier: #00000030;
+
     --text-dark: #0d0d0d;
     --text-light: #f2f2f2;
-    --text-unimportant: #B2B2B2;
+    --text-unimportant: #888;
 
     --bg-dark: #171717;
     --bg-light: #e8e8e8;
     --bg-brand: #2DB9A4;
     --bg-brand-light: #B0E2DB;
+    --bg-inputs-light: #ffffff;
 
     --unit-1: 4px;
     --unit-2: 8px;
@@ -74,6 +77,8 @@ img {
     width: 100%;
     object-fit: cover;
 }
+
+/* Стили текста */
 
 .heading {
     font-family: var(--accent-font);
@@ -132,6 +137,8 @@ img {
     font-weight: bold;
 }
 
+/* Теги */
+
 .article__tags {
     display: flex;
     gap: var(--unit-2);
@@ -145,4 +152,88 @@ img {
 
     background-color: var(--bg-brand-light);
     color: var(--text-dark);
+}
+
+/* Кнопки */
+
+.button {
+    border: 2px solid var(--border-modifier);
+    border-radius: var(--unit-2);
+
+    font-family: var(--accent-font);
+    font-variation-settings: "wdth" 100;
+    font-size: 16px;
+
+    transition: all ease 150ms;
+}
+
+.button_m,
+.input__field_m {
+    padding: var(--unit-1) var(--unit-2);
+}
+
+.button_l,
+.input__field_l {
+    padding: var(--unit-2) var(--unit-3);
+}
+
+.button_primary {
+    background-color: var(--bg-brand);
+    color: var(--text-light);
+
+    font-weight: 650;
+}
+
+.button_secondary {
+    background-color: var(--bg-inputs-light);
+    color: var(--text-dark);
+
+    font-weight: 600;
+}
+
+.button_primary:hover {
+    background-color: color-mix(in hsl shorter hue, var(--bg-brand) 90%, black);
+}
+
+.button_secondary:hover {
+    background-color: color-mix(in hsl shorter hue, var(--bg-inputs-light) 90%, black);
+}
+
+.button_primary:active {
+    background-color: color-mix(in hsl shorter hue, var(--bg-brand) 80%, black);
+}
+
+.button_secondary:active {
+    background-color: color-mix(in hsl shorter hue, var(--bg-inputs-light) 80%, black);
+}
+
+/* Поля ввода */
+
+.input__name {
+    margin-bottom: var(--unit-1);
+}
+
+.input__description{
+    margin-bottom: var(--unit-2);
+}
+
+.input__name_required::after {
+    content: "*";
+    color: #ED4F4F;
+}
+
+.input__field {
+    border: 2px solid var(--border-modifier);
+    border-radius: var(--unit-1);
+    color: var(--text-dark);
+}
+
+.input__field:focus {
+    outline: none;
+    border-color: var(--bg-brand);
+    box-shadow: 0 0 var(--unit-1) var(--bg-brand);
+}
+
+.input__field::placeholder {
+    color: var(--text-unimportant);
 }
