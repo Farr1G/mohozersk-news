@@ -2,21 +2,21 @@ const CARD_TYPES = {
         S: "s", M: "m", L: "l"
 }
 
-function render_columns (Columns, hasMainColumn) {
-    Columns.AsideColumn.forEach((Article) => {
+function renderColumns (columns, hasMainColumn) {
+    columns.AsideColumn.forEach((article) => {
         const Aside = document.querySelector("aside");
-        render_card(Article, CARD_TYPES.S, Aside);
+        renderCard(article, CARD_TYPES.S, Aside);
     })
 
     if (hasMainColumn) {
-        Columns.MainColumn.forEach((Article) => {
+        columns.MainColumn.forEach((article) => {
         const Main = document.querySelector("main")
-            render_card(Article, CARD_TYPES.M, Main);
+            renderCard(article, CARD_TYPES.M, Main);
         })
     }
 }
 
-function prepare_columns (Articles, hasMainColumn) {
+function prepareColumns (articles, hasMainColumn) {
     const FILLING_REQUIREMENTS = {
         "ASIDE_COLUMN": 3,
         "MAIN_COLUMN": hasMainColumn ? 9 : 0
@@ -30,16 +30,16 @@ function prepare_columns (Articles, hasMainColumn) {
     // 
     // Сортировать новости по категориям
 
-    for (let index = Articles.length - 1; index >= 0
+    for (let index = articles.length - 1; index >= 0
         && (AsideColumn.length < FILLING_REQUIREMENTS.ASIDE_COLUMN
         || MainColumn.length < FILLING_REQUIREMENTS.MAIN_COLUMN); index--
     ) {
-        const Article = Articles[index];
+        const article = articles[index];
 
-        if (Article.importance === CARD_TYPES.S && AsideColumn.length < FILLING_REQUIREMENTS.ASIDE_COLUMN) {
-            AsideColumn.push(Article);
+        if (article.importance === CARD_TYPES.S && AsideColumn.length < FILLING_REQUIREMENTS.ASIDE_COLUMN) {
+            AsideColumn.push(article);
         } else if (hasMainColumn && MainColumn.length < FILLING_REQUIREMENTS.MAIN_COLUMN) {
-            MainColumn.push(Article);
+            MainColumn.push(article);
         }
     }
 
@@ -49,7 +49,7 @@ function prepare_columns (Articles, hasMainColumn) {
     };
 }
 
-function get_card_template (cardType) {
+function getCardTemplate (cardType) {
     switch(cardType) {
         case CARD_TYPES.S:
             return document.getElementById("article-card-s-template");
@@ -62,28 +62,28 @@ function get_card_template (cardType) {
     }
 }
 
-function render_card(Article, cardType, destination) {
-    const ArticleCardTemplate = get_card_template(cardType);
+function renderCard(article, cardType, destination) {
+    const ArticleCardTemplate = getCardTemplate(cardType);
     const Card = ArticleCardTemplate.content.cloneNode(true);
 
     if (cardType === CARD_TYPES.M) {
-        Card.querySelector("img").setAttribute("src", Article.coverImage.imagePath);
-        Card.querySelector("img").setAttribute("alt", Article.coverImage.altText);
+        Card.querySelector("img").setAttribute("src", article.coverImage.path);
+        Card.querySelector("img").setAttribute("alt", article.coverImage.altText);
     }
 
-    Card.querySelector("h3").textContent = Article.heading;
-    Card.querySelector("time").setAttribute("datetime", Article.publicationDate);
-    Card.querySelector("time").textContent = render_age(Article.publicationDate);
-    Card.querySelector("a").setAttribute("href", `/article.html?id=${Article.id}`);
+    Card.querySelector("h3").textContent = article.heading;
+    Card.querySelector("time").setAttribute("datetime", article.publicationDate);
+    Card.querySelector("time").textContent = formatAge(article.publicationDate);
+    Card.querySelector("a").setAttribute("href", `/article.html?id=${article.id}`);
 
     destination.append(Card);
 
     if (cardType === CARD_TYPES.L) {
-        destination.querySelector(".card_l").style.backgroundImage = `url('${Article.coverImage.imagePath}')`;
+        destination.querySelector(".card_l").style.backgroundImage = `url('${article.coverImage.path}')`;
     }
 }
 
-function render_age(publicationDate) {
+function formatAge(publicationDate) {
     const temporalDate = Temporal.ZonedDateTime.from(`${publicationDate}+03:00[Europe/Moscow]`);
     const age = temporalDate.since(Temporal.Now.zonedDateTimeISO(), {largestUnit: "years", smallestUnits: "minutes"});
     
@@ -104,7 +104,7 @@ function render_age(publicationDate) {
     }
 }
 
-function render_date(publicationDate) {
+function formatDate(publicationDate) {
     const temporalDate = Temporal.ZonedDateTime.from(`${publicationDate}+03:00[Europe/Moscow]`);
     return temporalDate.toLocaleString("ru", {
         dateStyle: "long",

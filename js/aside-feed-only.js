@@ -1,3 +1,3 @@
 (get_articles())
-    .then((Articles) => prepare_columns(Articles, false))
-    .then((Columns) => render_columns(Columns, false))
+    .then((articles) => prepareColumns(articles, false))
+    .then((columns) => renderColumns(columns, false))

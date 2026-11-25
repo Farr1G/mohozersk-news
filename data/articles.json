@@ -8,7 +8,7 @@
         "publicationDate": "2026-11-08 11:47",
 
         "coverImage": {
-            "imagePath": "/data/images/card-cover-placeholder.png",
+            "path": "/data/images/card-cover-placeholder.png",
             "altText": "Фотография Соединительного переулка. Автор: Ефрения Семафорская."
         },
         
@@ -18,7 +18,7 @@
             "Так, например, название «переулок Заборов» могло появится из-за череды высоких металлических листов, обрамляющих дорогу с обеих сторон.",
             "«Соединительный переулок» впервые появился в плане города 2003 года, максимально функциональное и прямолинейное.",
             {
-                "imagePath": "/data/images/card-cover-placeholder.png",
+                "path": "/data/images/card-cover-placeholder.png",
                 "altText": "План Мохозёрска от 14.03.2003, где видно обозначение «Соединительный переулок». Источник: Администрации города Мохозёрск."
             },
             "Помимо этих названий, как говорит местный житель Наталий, «переулок называют Продольным переулком, Щелью или по-просту говорят: „Пройди между складами, — там — заборами“»."
@@ -34,7 +34,7 @@
         "publicationDate": "2026-11-09 21:20",
 
         "coverImage": {
-            "imagePath": "/data/images/card-cover-placeholder.png",
+            "path": "/data/images/card-cover-placeholder.png",
             "altText": "Заглушка."
         },
         
@@ -52,7 +52,7 @@
         "publicationDate": "2026-11-10 13:00",
 
         "coverImage": {
-            "imagePath": "/data/images/card-cover-placeholder.png",
+            "path": "/data/images/card-cover-placeholder.png",
             "altText": "Заглушка."
         },
         
@@ -71,7 +71,7 @@
         "publicationDate": "2026-11-11 09:00",
 
         "coverImage": {
-            "imagePath": "/data/images/card-cover-placeholder.png",
+            "path": "/data/images/card-cover-placeholder.png",
             "altText": "Заглушка."
         },
         
@@ -90,7 +90,7 @@
         "publicationDate": "2026-11-11 23:46",
 
         "coverImage": {
-            "imagePath": "/data/images/card-cover-placeholder.png",
+            "path": "/data/images/card-cover-placeholder.png",
             "altText": "Заглушка."
         },
         
@@ -109,7 +109,7 @@
         "publicationDate": "2026-11-12 16:02",
 
         "coverImage": {
-            "imagePath": "/data/images/card-cover-placeholder.png",
+            "path": "/data/images/card-cover-placeholder.png",
             "altText": "Заглушка."
         },
         
@@ -128,7 +128,7 @@
         "publicationDate": "2026-11-13 15:00",
 
         "coverImage": {
-            "imagePath": "/data/images/card-cover-placeholder.png",
+            "path": "/data/images/card-cover-placeholder.png",
             "altText": "Заглушка."
         },
         
@@ -147,7 +147,7 @@
         "publicationDate": "2026-11-14 10:00",
 
         "coverImage": {
-            "imagePath": "/data/images/card-cover-placeholder.png",
+            "path": "/data/images/card-cover-placeholder.png",
             "altText": "Заглушка."
         },
         
@@ -166,7 +166,7 @@
         "publicationDate": "2026-11-14 16:00",
 
         "coverImage": {
-            "imagePath": "/data/images/card-cover-placeholder.png",
+            "path": "/data/images/card-cover-placeholder.png",
             "altText": "Заглушка."
         },
         
@@ -185,7 +185,7 @@
         "publicationDate": "2026-11-15 10:01",
 
         "coverImage": {
-            "imagePath": "/data/images/card-cover-placeholder.png",
+            "path": "/data/images/card-cover-placeholder.png",
             "altText": "Заглушка."
         },
         
@@ -204,7 +204,7 @@
         "publicationDate": "2026-11-15 16:00",
 
         "coverImage": {
-            "imagePath": "/data/images/card-cover-placeholder.png",
+            "path": "/data/images/card-cover-placeholder.png",
             "altText": "Заглушка."
         },
         

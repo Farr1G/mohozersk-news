@@ -8,8 +8,8 @@
 // Создать их карточки в конце страницы
 // Удалить статью из боковой колонки, если она там есть
 (get_article(get_id_from_url()))
-    .then((Article) => {
-        if (Article === undefined) {
+    .then((article) => {
+        if (article === undefined) {
             window.location.replace(`non-existing-page.html`);
             return;
         }
@@ -18,14 +18,14 @@
 
         // Заголовок и сведения о статье
 
-        Main.querySelector("time").setAttribute("datetime", Article.publicationDate);
-        Main.querySelector("time").textContent = render_date(Article.publicationDate);
-        Main.querySelector("h1").textContent = Article.heading;
+        Main.querySelector("time").setAttribute("datetime", article.publicationDate);
+        Main.querySelector("time").textContent = formatDate(article.publicationDate);
+        Main.querySelector("h1").textContent = article.heading;
 
         const TagContainer = Main.querySelector(".article__tags");
         const TagTemplate = document.getElementById("article-tag-template");
 
-        Article.tags.forEach((tag) => {
+        article.tags.forEach((tag) => {
             const TagInstance = TagTemplate.content.cloneNode(true);
             TagInstance.querySelector("a").textContent = tag;
             TagContainer.append(TagInstance);
@@ -33,15 +33,15 @@
 
         // Обложка
 
-        render_element(Article.coverImage, Main)
+        render_element(article.coverImage, Main)
 
         // Содержание статьи
 
-        Article.content.forEach((element) => {
+        article.content.forEach((element) => {
             render_element(element, Main);
         })
 
-        render_linked_articles(Article.linkedArticles);
+        render_linked_articles(article.linkedArticles);
     })
 
 function get_id_from_url() {
@@ -64,7 +64,7 @@ function render_element(element, container) {
             const ImageTemplate = document.getElementById("article-image-template");
             const ImageInstance = ImageTemplate.content.cloneNode(true);
 
-            ImageInstance.querySelector("img").setAttribute("src", element.imagePath);
+            ImageInstance.querySelector("img").setAttribute("src", element.path);
             ImageInstance.querySelector("img").setAttribute("alt", element.altText);
             ImageInstance.querySelector("p").textContent = element.altText;
 
@@ -87,7 +87,7 @@ async function render_linked_articles (linkedArticles) {
 
     for (let index = 0; index < linkedArticles.length; index++) {
         const linkedArticle = await get_article(linkedArticles[index]);
-        render_card(linkedArticle, CARD_TYPES.S, LinkedArticlesContainer);
+        renderCard(linkedArticle, CARD_TYPES.S, LinkedArticlesContainer);
     }
 
     if (!linkedArticles.hasChildNodes()) {
