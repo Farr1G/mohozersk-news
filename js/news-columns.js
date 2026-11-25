@@ -63,6 +63,11 @@ function getCardTemplate (cardType) {
 }
 
 function renderCard(article, cardType, destination) {
+    if (article === undefined) {
+        console.warn(`Статья не была получена`);
+        return;
+    }
+
     const ArticleCardTemplate = getCardTemplate(cardType);
     const Card = ArticleCardTemplate.content.cloneNode(true);
 
@@ -75,6 +80,7 @@ function renderCard(article, cardType, destination) {
     Card.querySelector("time").setAttribute("datetime", article.publicationDate);
     Card.querySelector("time").textContent = formatAge(article.publicationDate);
     Card.querySelector("a").setAttribute("href", `/article.html?id=${article.id}`);
+    Card.querySelector("a").setAttribute("id", `article-id-${article.id}`);
 
     destination.append(Card);
 

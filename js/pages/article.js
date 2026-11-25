@@ -21,6 +21,7 @@
     })
 
     renderLinkedArticles(article.linkedArticles);
+    removeArticleFromAside(id);
 })();
 
 function getIdFromURL() {
@@ -29,7 +30,7 @@ function getIdFromURL() {
 }
 
 function renderTags(tags) {
-    const TagContainer = Main.querySelector(".article__tags");
+    const TagContainer = document.querySelector(".article__tags");
     const TagTemplate = document.getElementById("article-tag-template");
 
     tags.forEach((tag) => {
@@ -80,7 +81,15 @@ async function renderLinkedArticles (linkedArticles) {
         renderCard(linkedArticle, CARD_TYPES.S, LinkedArticlesContainer);
     }
 
-    if (!linkedArticles.hasChildNodes()) {
+    if (!LinkedArticlesContainer.hasChildNodes()) {
         LinkedArticlesContainer.remove();
+    }
+}
+
+function removeArticleFromAside(id) {
+    const articleCard = document.getElementById(`article-id-${id}`);
+
+    if (articleCard !== null) {
+        articleCard.remove();
     }
 }
