@@ -64,7 +64,7 @@ function getCardTemplate (cardType) {
 
 function renderCard(article, cardType, destination) {
     if (article === undefined) {
-        console.warn(`Статья не была получена`);
+        console.error(`Статья не была получена`);
         return;
     }
 
