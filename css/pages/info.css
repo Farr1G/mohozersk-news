@@ -1,0 +1,38 @@
+/* MAIN */
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.section__heading {
+    margin-bottom: var(--unit-4);
+}
+
+.section {
+    display: none;
+}
+
+.section:target {
+    display: block;
+}
+
+/* ASIDE */
+
+.aside__ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--unit-2);
+
+    list-style: none;
+}
+
+.aside__link {
+    color: var(--text-unimportant);
+    transition: all ease 100ms;
+}
+
+.aside__link:hover,
+.aside__link_target {
+    color: var(--text-dark);
+}
