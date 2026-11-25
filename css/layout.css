@@ -87,7 +87,16 @@
 .socials {
     display: flex;
     gap: var(--unit-2);
-    flex-direction: row-reverse;
+    flex-direction: row;
+    justify-content: end;
+
+    grid-row: span 2;
+}
+
+.socials__a, 
+.socials__img {
+    height: var(--unit-7);
+    aspect-ratio: 1;
 }
 
 /* MAIN & ASIDE */
