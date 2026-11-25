@@ -12,9 +12,13 @@
     }
 }
 
+.searchbar {
+    margin-bottom: var(--unit-4);
+}
+
 .search__fieldset {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr 2fr;
     gap: var(--unit-2);
 
     border: none;

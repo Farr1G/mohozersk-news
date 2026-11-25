@@ -29,27 +29,15 @@
 
 .searchbar {
     display: flex;
-
-    border-radius: var(--unit-1);
-    background-color: white;
 }
 
 .searchbar__input {
-    flex-grow: 1;
-    
-    padding: var(--unit-1) var(--unit-2);
-    border: none;
-
-    background-color: transparent;
-}
-
-.searchbar__input::placeholder {
-    color: var(--text-unimportant);
+    border-radius: var(--unit-2) 0 0 var(--unit-2) !important;
+    border-right: none;
 }
 
 .searchbar__button {
-    border: none;
-    background-color: transparent;
+    border-radius: 0 var(--unit-2) var(--unit-2) 0;
 }
 
 .logo__img {

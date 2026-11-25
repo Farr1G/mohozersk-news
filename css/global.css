@@ -223,9 +223,12 @@ img {
 }
 
 .input__field {
+    width: 100%;
     border: 2px solid var(--border-modifier);
     border-radius: var(--unit-1);
+
     color: var(--text-dark);
+    background-color: var(--bg-inputs-light);
 }
 
 .input__field:focus {

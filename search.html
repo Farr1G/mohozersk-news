@@ -22,35 +22,30 @@
         <div class="container">
             <main class="main">
                 <h1 class="heading">Поиск по сайту</h1>
-                
                 <section class="search">
                     <form>
                         <search class="searchbar">
-                            <input type="search" placeholder="Найти статью..." class="searchbar__input searchbar__input_large body-text">
-                            <button type="submit" class="searchbar__button body-text"><img src="/data/images/icons/search.svg" alt="Лупа"></button>
+                            <input type="search" placeholder="Найти статью..." class="searchbar__input input__field input__field_l body-text">
+                            <button type="submit" class="searchbar__button button button_l button_primary body-text"><img src="/data/images/icons/search.svg" alt="Поиск"></button>
                         </search>
 
-                        <h2 class="subheading">Фильтры</h2>
                         <fieldset class="search__fieldset">
-                            <input type="date" id="from-date-input" class="searchbar__input body-text">
-                            <input type="date" id="until-date-input">
-
-                            <select id="theme-input">
-                                <option value="none">По всем темам</option>
-                                <option value="none">Власть</option>
-                                <option value="none">Потом добавить сюда темы</option>
-                                <option value="none">По тегам</option>
-                            </select>
-                        </fieldset>
-
-                        <h2 class="subheading">Теги</h2>
-                        <fieldset class="search__fieldset">
-                            <div class="article__tags">
-                                <template id="article-tag-template">
-                                    <button class="article__tag caption-text"></button>
-                                </template>
-                                <button href="#" class="article__tag caption-text">Власть</button>
-                                <button href="#" id="add-tags-button" class="article__tag caption-text">Добавить тег</button>
+                            <div class="input">
+                                <div class="input__name functional-text">Начиная с</div>
+                                <input type="date" id="from-date-input" class="input__field input__field_m body-text">
+                            </div>
+                            <div class="input">
+                                <div class="input__name functional-text">Вплоть до</div>
+                                <input type="date" id="until-date-input" class="input__field input__field_m body-text">
+                            </div>
+                            <div class="input">
+                                <div class="input__name functional-text">Тема</div>
+                                <select id="theme-input" class="input__field input__field_m body-text">
+                                    <option value="none">По всем темам</option>
+                                    <option value="none">Власть</option>
+                                    <option value="none">Потом добавить сюда темы</option>
+                                    <option value="none">По тегам</option>
+                                </select>
                             </div>
                         </fieldset>
                     </form>
