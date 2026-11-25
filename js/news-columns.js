@@ -52,11 +52,9 @@ function prepareColumns (articles, hasMainColumn) {
 function getCardTemplate (cardType) {
     switch(cardType) {
         case CARD_TYPES.S:
-            return document.getElementById("article-card-s-template");
         case CARD_TYPES.M:
-            return document.getElementById("article-card-m-template");
         case CARD_TYPES.L:
-            return document.getElementById("article-card-l-template");
+            return document.getElementById(`article-card-${cardType}-template`)
         default:
             console.error(`Был получен неизвестный тип карточки: ${cardType}`);
     }
