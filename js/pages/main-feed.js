@@ -1,11 +1,11 @@
 (async () => {
-    const articles = await get_articles();
+    const articles = await getArticles();
     const columns = prepareColumns(articles, true);
     renderColumns(columns, true);
 })();
 
 (async () => {
-    const ArticleOfTheDay = await get_article_of_the_day();
+    const ArticleOfTheDay = await getArticleOfTheDay();
     const Main = document.querySelector("main");
     renderCard(ArticleOfTheDay, CARD_TYPES.L, Main);
 })();

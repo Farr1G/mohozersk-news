@@ -1,4 +1,4 @@
-async function get_articles () {
+async function getArticles () {
     try {
         const response = await fetch("/data/articles.json");
         const articles = await response.json();
@@ -9,9 +9,9 @@ async function get_articles () {
     }
 }
 
-async function get_article (index) {
+async function getArticle (index) {
     try {
-        const articles = await get_articles()
+        const articles = await getArticles()
         const article = articles[index]
         
         return article;
@@ -20,11 +20,11 @@ async function get_article (index) {
     }
 }
 
-async function get_article_of_the_day() {
+async function getArticleOfTheDay() {
     try {
         const response = await fetch("/data/article-of-the-day.json");
         const parsedJSON = await response.json();
-        const articleOfTheDay = await get_article(parsedJSON.id);
+        const articleOfTheDay = await getArticle(parsedJSON.id);
 
         return articleOfTheDay;
     } catch (error) {

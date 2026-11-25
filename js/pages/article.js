@@ -1,55 +1,45 @@
-// TODO: Заменить на вытягивание из ссылки
-// Сделать проверку на валидность статьи
-// const ARTICE_INDEX = 0
+(async () => {
+    const id = getIdFromURL();
+    const article = await getArticle(id);
 
-// Получить статью по индексу
-// Заполнить информацией страницу
-// Получить связанные статьи
-// Создать их карточки в конце страницы
-// Удалить статью из боковой колонки, если она там есть
-(get_article(get_id_from_url()))
-    .then((article) => {
-        if (article === undefined) {
-            window.location.replace(`non-existing-page.html`);
-            return;
-        }
+    if (article === undefined) {
+        window.location.replace(`non-existing-page.html`);
+        return;
+    }
 
-        const Main = document.querySelector("main");
+    const Main = document.querySelector("main");
 
-        // Заголовок и сведения о статье
+    Main.querySelector("time").setAttribute("datetime", article.publicationDate);
+    Main.querySelector("time").textContent = formatDate(article.publicationDate);
+    Main.querySelector("h1").textContent = article.heading;
+    renderTags(article.tags);
 
-        Main.querySelector("time").setAttribute("datetime", article.publicationDate);
-        Main.querySelector("time").textContent = formatDate(article.publicationDate);
-        Main.querySelector("h1").textContent = article.heading;
+    renderElement(article.coverImage, Main);
 
-        const TagContainer = Main.querySelector(".article__tags");
-        const TagTemplate = document.getElementById("article-tag-template");
-
-        article.tags.forEach((tag) => {
-            const TagInstance = TagTemplate.content.cloneNode(true);
-            TagInstance.querySelector("a").textContent = tag;
-            TagContainer.append(TagInstance);
-        });
-
-        // Обложка
-
-        render_element(article.coverImage, Main)
-
-        // Содержание статьи
-
-        article.content.forEach((element) => {
-            render_element(element, Main);
-        })
-
-        render_linked_articles(article.linkedArticles);
+    article.content.forEach((element) => {
+        renderElement(element, Main);
     })
 
-function get_id_from_url() {
+    renderLinkedArticles(article.linkedArticles);
+})();
+
+function getIdFromURL() {
     const params = new URLSearchParams(window.location.search);
     return params.get("id");
 }
 
-function render_element(element, container) {
+function renderTags(tags) {
+    const TagContainer = Main.querySelector(".article__tags");
+    const TagTemplate = document.getElementById("article-tag-template");
+
+    tags.forEach((tag) => {
+        const TagInstance = TagTemplate.content.cloneNode(true);
+        TagInstance.querySelector("a").textContent = tag;
+        TagContainer.append(TagInstance);
+    });
+}
+
+function renderElement(element, container) {
     switch (typeof(element)) {
         case "string":
             const ParagraphTemplate = document.getElementById("article-paragraph-template");
@@ -77,7 +67,7 @@ function render_element(element, container) {
     }
 }
 
-async function render_linked_articles (linkedArticles) {
+async function renderLinkedArticles (linkedArticles) {
     const LinkedArticlesContainer = document.querySelector(".linked-articles");
 
     if (linkedArticles === null) {
@@ -86,7 +76,7 @@ async function render_linked_articles (linkedArticles) {
     }
 
     for (let index = 0; index < linkedArticles.length; index++) {
-        const linkedArticle = await get_article(linkedArticles[index]);
+        const linkedArticle = await getArticle(linkedArticles[index]);
         renderCard(linkedArticle, CARD_TYPES.S, LinkedArticlesContainer);
     }
 
