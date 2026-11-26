@@ -36,6 +36,7 @@ function renderTags(tags) {
     tags.forEach((tag) => {
         const TagInstance = TagTemplate.content.cloneNode(true);
         TagInstance.querySelector("a").textContent = tag;
+        TagInstance.querySelector("a").setAttribute("href", "/search.html?theme=" + tag);
         TagContainer.append(TagInstance);
     });
 }
