@@ -179,7 +179,7 @@ img {
 
 .button_primary {
     background-color: var(--bg-brand);
-    color: var(--text-light);
+    color: #ffffff;
 
     font-weight: 650;
 }
