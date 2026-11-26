@@ -18,21 +18,8 @@
         <link rel="stylesheet" href="/css/cards.css">
     </head>
     <body class="body-text">
-        <header class="header">
-            <a href="/index.html" class="logo subheading"><img src="/data/images/logo.svg" alt="INSERT_NAME" class="logo__img"></a>
-            <nav class="header__nav">
-                <ul class="header__ul functional-text">
-                    <li><a href="#" class="header__a">Власть</a></li>
-                    <li><a href="#" class="header__a">Потом добавить сюда темы</a></li>
-                    <li><a href="#" class="header__a">По тегам</a></li>
-                </ul>
-            </nav>
-            <search class="searchbar">
-                <input type="search" id="header-searchbar-input" placeholder="Найти статью..." class="searchbar__input input__field input__field_m body-text">
-                <button id="header-searchbar-button" class="searchbar__button button button_m button_secondary body-text"><img src="/data/images/icons/search.svg" alt="Поиск"></button>
-            </search>
-        </header>
-
+        <header class="header" id="header-placeholder"></header>
+        
         <div class="container">
             <main class="main">
                 <template id="article-card-m-template">
@@ -62,26 +49,11 @@
             </aside>
         </div>
 
-        <footer class="footer">
-            <nav class="footer__nav">
-                <ul class="footer__ul functional-text">
-                    <li class="footer__li"><a href="/info.html#contacts" class="footer__a">Контакты</a></li>
-                    <li class="footer__li"><a href="/info.html#documents" class="footer__a">Документы</a></li>
-                    <li class="footer__li"><a href="/info.html#about" class="footer__a">О редакции</a></li>
-                    <li class="footer__li"><a href="#" class="footer__a">Панель управления</a></li>
-                </ul>
-            </nav>
-            <div class="socials">
-                <a href="https://web.telegram.org/k/" class="footer__a socials__a"><img src="/data/images/icons/telegram.svg" alt="Telegram" class="socials__img"></a>
-                <a href="https://vk.ru/feed" class="footer__a socials__a"><img src="/data/images/icons/vk.svg" alt="ВКонтакте" class="socials__img"></a>
-                <a href="https://www.whatsapp.com/" class="footer__a socials__a"><img src="/data/images/icons/whatsapp.svg" alt="WhatsApp" class="socials__img"></a>
-            </div>
-            <p class="footer__copyright caption-text">© 2003–2026 ООО «INSERT_NAME»</p>
-        </footer>
+        <footer class="footer" id="footer-placeholder"></footer>
 
         <script src="/js/api.js"></script>
         <script src="/js/news-columns.js"></script>
         <script src="/js/pages/main-feed.js"></script>
-        <script src="/js/header-search.js"></script>
+        <script src="/js/header-and-footer.js"></script>
     </body>
 </html>
