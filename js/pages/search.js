@@ -16,6 +16,9 @@ SearchForm.addEventListener("submit", async (event) => {
 async function applyFiltersFromURL() {
     const filters = getFiltersFromURL();
     fillFormFromFilters(filters);
+
+    articles = await getArticlesByFilters(filters);
+    showSearchResults(articles)
 }
 
 function parseFormData(data) {
