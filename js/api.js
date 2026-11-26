@@ -87,3 +87,15 @@ function checkForKeywordsIn(article, keywords) {
 
     return false;
 }
+
+async function getThemes() {
+    try {
+        const response = await fetch("/data/themes.json");
+        const parsedJSON = await response.json();      
+
+        return parsedJSON;
+    } catch (error) {
+        console.error(error.message);
+        return [];
+    }
+}

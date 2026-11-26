@@ -27,3 +27,20 @@ function parseFormData(data) {
         "theme": data.get("theme-input")
     };
 }
+
+// Вставка тем
+(async () => {
+    const themes = await getThemes();
+
+    const ThemeInput = document.getElementById("theme-input");
+    const ThemeOptionTemplate = document.getElementById("option-template");
+
+    themes.forEach((theme) => {
+        const Option = ThemeOptionTemplate.content.cloneNode(true);
+
+        Option.querySelector("option").setAttribute("value", theme);
+        Option.querySelector("option").textContent = theme;
+
+        ThemeInput.append(Option);
+    })
+})();
