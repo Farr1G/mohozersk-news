@@ -51,6 +51,10 @@ async function getArticlesByFilters(filters) {
                 return false;
             }
 
+            if (filters.theme && article.tags.indexOf(filters.theme) < 0) {
+                return false;
+            }
+
             return true;
         });
     } catch (error) {
@@ -62,8 +66,9 @@ async function getArticlesByFilters(filters) {
 function checkForKeywordsIn(article, keywords) {
     const needle = keywords.toLowerCase();
 
-    const contains = (text) =>
-        typeof text === "string" && text.toLowerCase().includes(needle);
+    function contains (text) {
+        return typeof(text) === "string" && text.toLowerCase().includes(needle);
+    }
 
     if (contains(article.heading)) {
         return true
@@ -75,9 +80,9 @@ function checkForKeywordsIn(article, keywords) {
 
     if (Array.isArray(article.content)) {
         return article.content.some((element) => {
-            if (typeof element === "string") {
+            if (typeof(element) === "string") {
                 return contains(element)
-            } else if (element && typeof element === "object") {
+            } else if (element && typeof(element) === "object") {
                 return contains(element.altText)
             } else {
                 return false
