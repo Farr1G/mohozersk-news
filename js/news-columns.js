@@ -3,14 +3,15 @@ const CARD_TYPES = {
 }
 
 function renderColumns (columns, hasMainColumn) {
+    const Aside = document.querySelector("aside");
+    const Main = document.querySelector("main")
+
     columns.AsideColumn.forEach((article) => {
-        const Aside = document.querySelector("aside");
         renderCard(article, CARD_TYPES.S, Aside);
     })
 
     if (hasMainColumn) {
         columns.MainColumn.forEach((article) => {
-        const Main = document.querySelector("main")
             renderCard(article, CARD_TYPES.M, Main);
         })
     }
@@ -18,7 +19,7 @@ function renderColumns (columns, hasMainColumn) {
 
 function prepareColumns (articles, hasMainColumn) {
     const FILLING_REQUIREMENTS = {
-        "ASIDE_COLUMN": 3,
+        "ASIDE_COLUMN": 12,
         "MAIN_COLUMN": hasMainColumn ? 9 : 0
     };
     const AsideColumn = [];
@@ -43,6 +44,19 @@ function prepareColumns (articles, hasMainColumn) {
         }
     }
 
+    // Если статей для aside column не хватило,
+    // То заполнить свежими статьями без разбору
+
+    if (AsideColumn.length < FILLING_REQUIREMENTS.ASIDE_COLUMN) {
+        AsideColumn.length = 0;
+
+        for (let index = articles.length - 1; index >= 0
+            && AsideColumn.length < FILLING_REQUIREMENTS.ASIDE_COLUMN; index--) {
+            const article = articles[index];
+            AsideColumn.push(article);
+        }
+    }
+
     return {
         "AsideColumn": AsideColumn, 
         "MainColumn": MainColumn
@@ -61,11 +75,6 @@ function getCardTemplate (cardType) {
 }
 
 function renderCard(article, cardType, destination) {
-    if (article === undefined) {
-        console.error(`Статья не была получена`);
-        return;
-    }
-
     const ArticleCardTemplate = getCardTemplate(cardType);
     const Card = ArticleCardTemplate.content.cloneNode(true);
 
